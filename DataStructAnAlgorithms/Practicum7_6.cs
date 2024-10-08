@@ -13,19 +13,27 @@ namespace DataStructAnAlgorithms
 
         //Удалить все столбцы, в которых первый элемент больше последнего.
 
+        /*
+         * 5 15 20 30
+         * 10 10
+         * 10 15 30 20
+         */
+
         public static void Task7()
         {
-            Random rnd = new Random();
-            Console.WriteLine("Введите максимальную размерность: ");
+            Console.WriteLine("Введите количество строк: ");
             int n = int.Parse(Console.ReadLine());
             int[][] array = new int[n][];
 
             for (int i = 0; i < n; i++)
             {
-                int[] row = new int[n];
-                for (int j = 0; j < n; j++)
+                Console.WriteLine($"Введите размерность {i + 1}-ой строки");
+                int m = int.Parse(Console.ReadLine());
+                int[] row = new int[m];
+                for (int j = 0; j < m; j++)
                 {
-                    row[j] = rnd.Next(-100, 100);
+                    Console.Write($"array[{i}][{j}] = ");
+                    row[j] = int.Parse(Console.ReadLine());
                 }
                 array[i] = row;
             }
@@ -53,17 +61,44 @@ namespace DataStructAnAlgorithms
         private static void RemoveColumnsWithFirstLessThenLast(int[][] array)
         {
             int j = 0;
-            while (array.GetLength(0) > 0 && j < array[0].Length)
+            while (j < GetColumnsCountInArray(array))
             {
-                if (array[0][j] < array[array.GetLength(0) - 1][j])
+                if (GetColumnLength(array, j) < 2)
+                    continue;
+
+                int[] column = new int[GetColumnLength(array, j)];
+                int columnIndex = 0;
+                for (int i = 0; i < array.GetLength(0); i++)
+                {
+                    if (array[i].Length > j)
+                    {
+                        column[columnIndex] = array[i][j];
+                        columnIndex++;
+                    }
+                }
+
+                if (column[0] < column.Last())
                 {
                     for (int i = 0; i < array.GetLength(0); i++)
                     {
-                        array[i] = RemoveElementFromArrayByIndex(array[i], j);
+                        if (array[i].Length > j)
+                        {
+                            array[i] = RemoveElementFromArrayByIndex(array[i], j);
+                        }
                     }
                 }
                 j++;
             }
+        }
+
+        private static int GetColumnsCountInArray(int[][] array)
+        {
+            return array.Max(row => row.Length);
+        }
+
+        private static int GetColumnLength(int[][] array, int columnIndex)
+        {
+            return array.Where(row => row.Length > columnIndex).Count();
         }
 
         private static int[] RemoveElementFromArrayByIndex(int[] array, int index)
