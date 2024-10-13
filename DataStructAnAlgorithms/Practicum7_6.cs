@@ -14,10 +14,26 @@ namespace DataStructAnAlgorithms
         //Удалить все столбцы, в которых первый элемент больше последнего.
 
         /*
-         * 5 15 20 30
+         * 5 15 20 30 40
          * 10 10
          * 10 15 30 20
          */
+        //3
+        //5
+        //5
+        //15
+        //20
+        //30
+        //40
+        //2
+        //10
+        //10
+        //4
+        //10
+        //15
+        //30
+        //20
+
 
         public static void Task7()
         {
@@ -60,34 +76,28 @@ namespace DataStructAnAlgorithms
 
         private static void RemoveColumnsWithFirstLessThenLast(int[][] array)
         {
-            int j = 0;
-            while (j < GetColumnsCountInArray(array))
+            int columnIndex = 0;
+            while (columnIndex < GetColumnsCountInArray(array))
             {
-                if (GetColumnLength(array, j) < 2)
-                    continue;
-
-                int[] column = new int[GetColumnLength(array, j)];
-                int columnIndex = 0;
-                for (int i = 0; i < array.GetLength(0); i++)
+                if (GetColumnLength(array, columnIndex) < 2)
                 {
-                    if (array[i].Length > j)
-                    {
-                        column[columnIndex] = array[i][j];
-                        columnIndex++;
-                    }
+                    columnIndex++;
+                    continue;
                 }
+
+                int[] column = GetColumn(array, columnIndex);
 
                 if (column[0] < column.Last())
                 {
                     for (int i = 0; i < array.GetLength(0); i++)
                     {
-                        if (array[i].Length > j)
+                        if (array[i].Length > columnIndex)
                         {
-                            array[i] = RemoveElementFromArrayByIndex(array[i], j);
+                            array[i] = RemoveElementFromArrayByIndex(array[i], columnIndex);
                         }
                     }
                 }
-                j++;
+                columnIndex++;
             }
         }
 
@@ -99,6 +109,21 @@ namespace DataStructAnAlgorithms
         private static int GetColumnLength(int[][] array, int columnIndex)
         {
             return array.Where(row => row.Length > columnIndex).Count();
+        }
+
+        private static int[] GetColumn(int[][] array, int columnIndex)
+        {
+            int[] column = new int[GetColumnLength(array, columnIndex)];
+            int curIndex = 0;
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                if (array[i].Length > columnIndex)
+                {
+                    column[curIndex] = array[i][columnIndex];
+                    curIndex++;
+                }
+            }
+            return column;
         }
 
         private static int[] RemoveElementFromArrayByIndex(int[] array, int index)
