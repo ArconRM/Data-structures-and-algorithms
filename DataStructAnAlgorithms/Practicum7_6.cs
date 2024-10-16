@@ -36,8 +36,8 @@ namespace DataStructAnAlgorithms
 
         //3
         //3
-        //30
-        //40
+        //10
+        //10
         //50
         //5
         //20
@@ -46,8 +46,8 @@ namespace DataStructAnAlgorithms
         //20
         //20
         //2
-        //10
-        //10
+        //30
+        //40
 
 
         public static void Task7()
@@ -102,7 +102,7 @@ namespace DataStructAnAlgorithms
 
                 int[] column = GetColumn(array, columnIndex);
 
-                if (column[0] > column.Last())
+                if (column[0] < column.Last())
                 {
                     for (int i = 0; i < array.GetLength(0); i++)
                     {
@@ -111,6 +111,7 @@ namespace DataStructAnAlgorithms
                             array[i] = RemoveElementFromArrayByIndex(array[i], columnIndex);
                         }
                     }
+                    columnIndex--;
                 }
                 columnIndex++;
             }
