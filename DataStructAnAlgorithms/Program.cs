@@ -6,7 +6,7 @@ namespace DataStructAnAlgorithms
     {
         static void Main(string[] args)
         {
-            Practicum7_6.Task7();
+            Practicum8_3.Task7();
         }
     }
 }
