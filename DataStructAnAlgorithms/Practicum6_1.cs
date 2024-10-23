@@ -17,7 +17,7 @@ namespace DataStructAnAlgorithms
         }
 
         //Решето Эратосфена
-        private static uint[] SieveB(uint n)
+        private static List<uint> SieveB(uint n)
         {
             bool[] marked = new bool[n];
             List<uint> primes = new();
@@ -38,7 +38,7 @@ namespace DataStructAnAlgorithms
                 }
             }
 
-            return primes.ToArray();
+            return primes;
         }
 
         public static void TaskC(uint n)
@@ -52,7 +52,7 @@ namespace DataStructAnAlgorithms
         }
 
         //Решето Сундарама
-        private static uint[] SieveC(uint n)
+        private static List<uint> SieveC(uint n)
         {
             uint m = (n - 1) / 2;
 
@@ -76,7 +76,7 @@ namespace DataStructAnAlgorithms
                 }
             }
 
-            return primes.ToArray();
+            return primes;
         }
     }
 }
