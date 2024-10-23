@@ -14,30 +14,30 @@ namespace DataStructAnAlgorithms
             SieveB(n);
             timer.Stop();
             Console.WriteLine($"Для n = {n}: Время выполнения {timer.ElapsedTicks} тактов");
+            Console.WriteLine(string.Join(" ", SieveB(n)));
         }
 
         //Решето Эратосфена
         private static List<uint> SieveB(uint n)
         {
-            bool[] marked = new bool[n];
-            List<uint> primes = new();
-            marked[0] = false;
-
-            for (uint k = 2; k <= n; k++)
-            {
-                marked[k - 1] = true;
-            }
+            bool[] marked = new bool[n+2];
 
             for (uint k = 2; k * k <= n; k++)
             {
-                if (marked[k - 1])
+                if (!marked[k])
                 {
-                    primes.Add(k);
                     for (uint l = k * k; l <= n; l += k)
-                        marked[l - 1] = false;
+                        marked[l] = true;
                 }
             }
 
+            List<uint> primes = new();
+
+            for (uint i = 2; i <= n; i++)
+            {
+                if (!marked[i])
+                    primes.Add(i);
+            }
             return primes;
         }
 
@@ -49,31 +49,29 @@ namespace DataStructAnAlgorithms
             SieveC(n);
             timer.Stop();
             Console.WriteLine($"Для n = {n}: Время выполнения {timer.ElapsedTicks} тактов");
+            Console.WriteLine(string.Join(" ", SieveC(n)));
         }
 
         //Решето Сундарама
         private static List<uint> SieveC(uint n)
         {
-            uint m = (n - 1) / 2;
+            n /= 2;
+            bool[] marked = new bool[n+1];
 
-            bool[] marked = new bool[m + 1];
-
-            for (uint i = 1; i <= m; i++)
+            for (uint i = 1; i + i + 2 * i * i <= n; i++)
             {
-                for (uint j = i; (i + j + 2 * i * j) <= m; j++)
+                for (uint j = i; i + j + 2 * i * j <= n; j++)
                 {
                     marked[i + j + 2 * i * j] = true;
                 }
             }
 
-            List<uint> primes = new List<uint>() { 2 };
+            List<uint> primes = new() { 2 };
 
-            for (uint i = 1; i <= m; i++)
+            for (uint i = 1; i < n; i++)
             {
                 if (!marked[i])
-                {
                     primes.Add(2 * i + 1);
-                }
             }
 
             return primes;
