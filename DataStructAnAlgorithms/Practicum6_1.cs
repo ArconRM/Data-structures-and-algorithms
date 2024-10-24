@@ -14,7 +14,7 @@ namespace DataStructAnAlgorithms
             SieveB(n);
             timer.Stop();
             Console.WriteLine($"Для n = {n}: Время выполнения {timer.ElapsedTicks} тактов");
-            Console.WriteLine(string.Join(" ", SieveB(n)));
+            //Console.WriteLine(string.Join(" ", SieveB(n)));
         }
 
         //Решето Эратосфена
@@ -49,7 +49,7 @@ namespace DataStructAnAlgorithms
             SieveC(n);
             timer.Stop();
             Console.WriteLine($"Для n = {n}: Время выполнения {timer.ElapsedTicks} тактов");
-            Console.WriteLine(string.Join(" ", SieveC(n)));
+            //Console.WriteLine(string.Join(" ", SieveC(n)));
         }
 
         //Решето Сундарама
