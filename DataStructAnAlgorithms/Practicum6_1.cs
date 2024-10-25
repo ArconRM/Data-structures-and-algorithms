@@ -55,7 +55,7 @@ namespace DataStructAnAlgorithms
         //Решето Сундарама
         private static List<uint> SieveC(uint n)
         {
-            n /= 2;
+            n = n % 2 == 0 ? n / 2 : n / 2 + 1;
             bool[] marked = new bool[n+1];
 
             for (uint i = 1; i + i + 2 * i * i <= n; i++)
