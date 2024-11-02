@@ -8,9 +8,11 @@
   <ItemGroup>
     <None Remove="Assets\" />
     <None Remove="Assets\Practicum9\" />
+    <None Remove="Assets\Practicum14\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\" />
     <Folder Include="Assets\Practicum9\" />
+    <Folder Include="Assets\Practicum14\" />
   </ItemGroup>
 </Project>
