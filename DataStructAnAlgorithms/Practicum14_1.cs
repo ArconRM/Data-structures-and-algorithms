@@ -28,9 +28,9 @@ namespace DataStructAnAlgorithms
 
         public static void Task7()
         {
-            List<SPoint> sPoints = new();
+            List<SPoint> resultSPoints = new();
             double minDest = int.MaxValue;
-            (SPoint, SPoint)? minDestSPoints = null;
+            List<(SPoint, SPoint)> minDestSPoints = new();
 
             //using (StreamReader fileIn = new(path1))
             //using (StreamReader fileIn = new(path2))
@@ -40,26 +40,31 @@ namespace DataStructAnAlgorithms
             {
                 foreach (string numberStr in fileIn.ReadToEnd().Trim().Split("\n"))
                 {
-                    sPoints.Add(new SPoint(double.Parse(numberStr.Split(" ")[0]), double.Parse(numberStr.Split(" ")[1])));
+                    resultSPoints.Add(new SPoint(double.Parse(numberStr.Split(" ")[0]), double.Parse(numberStr.Split(" ")[1])));
                 }
 
-                for (int i = 0; i < sPoints.Count - 1; i++)
+                for (int i = 0; i < resultSPoints.Count - 1; i++)
                 {
-                    for (int j = i + 1; j < sPoints.Count; j++)
+                    for (int j = i + 1; j < resultSPoints.Count; j++)
                     {
-                        if (minDest > sPoints[i].Distance(sPoints[j]))
+                        if (minDest > resultSPoints[i].Distance(resultSPoints[j]))
                         {
-                            minDest = sPoints[i].Distance(sPoints[j]);
-                            minDestSPoints = (sPoints[i], sPoints[j]);
+                            minDest = resultSPoints[i].Distance(resultSPoints[j]);
+                            minDestSPoints = new List<(SPoint, SPoint)>() { (resultSPoints[i], resultSPoints[j]) };
+                        }
+                        else if (minDest == resultSPoints[i].Distance(resultSPoints[j]))
+                        {
+                            minDestSPoints.Add((resultSPoints[i], resultSPoints[j]));
                         }
                     }
                 }
 
-                fileOut.WriteLine(minDestSPoints);
+                fileOut.WriteLine("Пары точек:");
+                foreach (var sPoints in minDestSPoints)
+                {
+                    fileOut.WriteLine($"({sPoints.Item1}) и ({sPoints.Item2})");
+                }
                 fileOut.WriteLine($"Расстояние: {minDest}");
-
-                Console.WriteLine(minDestSPoints);
-                Console.WriteLine($"Расстояние: {minDest}");
             }
         }
     }

@@ -14,7 +14,7 @@ namespace DataStructAnAlgorithms
 
         public static void Task7()
         {
-            using (StreamReader fileIn = new(path1))
+            using (StreamReader fileIn = new(path2))
             using (StreamReader fileAge = new(pathAge))
             using (FileStream stream = new(pathOutput, FileMode.Create))
             using (StreamWriter fileOut = new(stream))
@@ -54,9 +54,9 @@ namespace DataStructAnAlgorithms
             this.maximumChildAge = maximumChildAge;
         }
 
-        public Toy(string fields)
+        public Toy(string fieldsStr, string delimiter = ";")
         {
-            string[] splittedFields = fields.Split(";");
+            string[] splittedFields = fieldsStr.Split(delimiter);
             name = splittedFields[0];
             price = decimal.Parse(splittedFields[1]);
             minimumChildAge = int.Parse(splittedFields[2]);
@@ -65,7 +65,7 @@ namespace DataStructAnAlgorithms
 
         public int CompareTo(Toy other)
         {
-            return price.CompareTo(other.price);
+            return -price.CompareTo(other.price);
         }
 
         public override string ToString()
