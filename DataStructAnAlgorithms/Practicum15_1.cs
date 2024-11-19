@@ -30,7 +30,7 @@ namespace DataStructAnAlgorithms
                 var filteredNumbers =
                     from n in numbers
                     where n < numberToCompare
-                    select n * 2;
+                    select n > 0 ? n * 2 : n / 2;
 
                 foreach (var filteredNum in filteredNumbers)
                     fileOut.WriteLine(filteredNum);

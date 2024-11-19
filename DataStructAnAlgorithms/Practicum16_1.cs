@@ -28,7 +28,7 @@ namespace DataStructAnAlgorithms
                     numbers.Add(double.Parse(numberStr));
                 }
 
-                var filteredNumbers = numbers.Where(n => n > numberToCompare).Select(n => n / 2);
+                var filteredNumbers = numbers.Where(n => n > numberToCompare).Select(n => n > 0 ? n / 2 : n * 2);
 
                 foreach (var filteredNum in filteredNumbers)
                     fileOut.WriteLine(filteredNum);
