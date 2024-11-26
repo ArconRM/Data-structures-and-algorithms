@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -6,15 +7,56 @@ namespace DataStructAnAlgorithms
 {
     public static class Practicum17
     {
+        //private static readonly string pathInput = "/Users/artemiymirotvortsev/Projects/Структуры данных и алгоритмы/DataStructAnAlgorithms/Assets/Practicum17/Input.txt";
+
         public static void Task7()
         {
-            CustomDoubleArray customDoubleArray = new CustomDoubleArray();
+            //CustomDoubleArray customDoubleArray = new();
+            //Console.WriteLine(customDoubleArray.ToString());
+            //Console.WriteLine(customDoubleArray.GetElementsCount());
+            //Console.WriteLine();
+            //Console.WriteLine(customDoubleArray.Dimension);
+            //Console.WriteLine();
+
+            //customDoubleArray.Scalar = 2;
+            //Console.WriteLine(customDoubleArray.ToString());
+
+            //customDoubleArray--;
+            //Console.WriteLine(customDoubleArray.ToString());
+
+            //CustomDoubleArray customDoubleArraySortedDescending = new();
+            //customDoubleArraySortedDescending.SortElementsDescending();
+            //Console.WriteLine(customDoubleArraySortedDescending);
+            //Console.WriteLine();
+
+            //CustomDoubleArray customDoubleArraySorted = new();
+            //if (customDoubleArraySorted)
+            //    Console.WriteLine("Отсортированы");
+            //else
+            //    Console.WriteLine("Не отсортированы");
+
+            //customDoubleArraySorted.SortElements();
+
+
+            //if (customDoubleArraySorted)
+            //    Console.WriteLine("Отсортированы");
+            //else
+            //    Console.WriteLine("Не отсортированы");
+
+            CustomDoubleArray customDoubleArray = new();
+            Console.WriteLine(customDoubleArray.ToString());
+
+            double[][] array = new double[2][] { new double[3] { 1, 2, 3}, new double[3] { 1, 2, 3} };
+            customDoubleArray = array;
+            Console.WriteLine(customDoubleArray.ToString());
         }
     }
 
     public class CustomDoubleArray
     {
         private static readonly int DefaultDimension = 5;
+        private static readonly double[] DefaultRow = new double[5] { 1, 2, 3, 4, 5 };
+        private static Random rng = new Random();
 
         private double[][] _doubleArray;
 
@@ -53,6 +95,15 @@ namespace DataStructAnAlgorithms
         public CustomDoubleArray(int dimension)
         {
             _doubleArray = new double[dimension][];
+            for (int i = 0; i < dimension; i++)
+            {
+                _doubleArray[i] = DefaultRow.OrderBy(_ => rng.Next()).ToArray();
+            }
+        }
+
+        public CustomDoubleArray(double[][] obj)
+        {
+            _doubleArray = obj;
         }
 
         public CustomDoubleArray(CustomDoubleArray obj)
@@ -63,6 +114,14 @@ namespace DataStructAnAlgorithms
         public int GetElementsCount()
         {
             return _doubleArray.Select(row => row.Length).Sum();
+        }
+
+        public void SortElements()
+        {
+            foreach (var row in _doubleArray)
+            {
+                Array.Sort(row);
+            }
         }
 
         public void SortElementsDescending()
@@ -102,7 +161,7 @@ namespace DataStructAnAlgorithms
 
         public static bool operator false(CustomDoubleArray obj)
         {
-            return obj ? false : true;
+            return obj == null || !obj.CheckIfSorted();
         }
 
         private bool CheckIfSorted()
