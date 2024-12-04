@@ -7,8 +7,6 @@ namespace DataStructAnAlgorithms
 {
     public static class Practicum17
     {
-        //private static readonly string pathInput = "/Users/artemiymirotvortsev/Projects/Структуры данных и алгоритмы/DataStructAnAlgorithms/Assets/Practicum17/Input.txt";
-
         public static void Task7()
         {
             //CustomDoubleArray customDoubleArray = new();
@@ -24,6 +22,7 @@ namespace DataStructAnAlgorithms
             //customDoubleArray--;
             //Console.WriteLine(customDoubleArray.ToString());
 
+
             //CustomDoubleArray customDoubleArraySortedDescending = new();
             //customDoubleArraySortedDescending.SortElementsDescending();
             //Console.WriteLine(customDoubleArraySortedDescending);
@@ -37,23 +36,22 @@ namespace DataStructAnAlgorithms
 
             //customDoubleArraySorted.SortElements();
 
-
             //if (customDoubleArraySorted)
             //    Console.WriteLine("Отсортированы");
             //else
             //    Console.WriteLine("Не отсортированы");
 
-            CustomDoubleArray customDoubleArray = new();
-            Console.WriteLine(customDoubleArray.ToString());
 
-            double[][] array = new double[2][] { new double[3] { 1, 2, 3}, new double[3] { 1, 2, 3} };
-            customDoubleArray = array;
-            Console.WriteLine(customDoubleArray.ToString());
+            //CustomDoubleArray customDoubleArray = new();
+            //double[][] array = new double[2][] { new double[3] { 1, 2, 3 }, new double[3] { 3, 1, 2 } };
+            //customDoubleArray = array;
+            //Console.WriteLine(customDoubleArray.ToString());
         }
     }
 
     public class CustomDoubleArray
     {
+        private static readonly string pathInput = "/Users/artemiymirotvortsev/Projects/Структуры данных и алгоритмы/DataStructAnAlgorithms/Assets/Practicum17/Input.txt";
         private static readonly int DefaultDimension = 5;
         private static readonly double[] DefaultRow = new double[5] { 1, 2, 3, 4, 5 };
         private static Random rng = new Random();
@@ -95,9 +93,15 @@ namespace DataStructAnAlgorithms
         public CustomDoubleArray(int dimension)
         {
             _doubleArray = new double[dimension][];
+
+            double[][] lines = File
+                .ReadAllLines(pathInput)
+                .Select(line => line.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(s => double.Parse(s)).ToArray())
+                .ToArray();
+
             for (int i = 0; i < dimension; i++)
             {
-                _doubleArray[i] = DefaultRow.OrderBy(_ => rng.Next()).ToArray();
+                _doubleArray[i] = lines[i % lines.Length];
             }
         }
 
@@ -106,10 +110,7 @@ namespace DataStructAnAlgorithms
             _doubleArray = obj;
         }
 
-        public CustomDoubleArray(CustomDoubleArray obj)
-        {
-            _doubleArray = obj._doubleArray;
-        }
+        public CustomDoubleArray(CustomDoubleArray obj) : this(obj._doubleArray) { }
 
         public int GetElementsCount()
         {
