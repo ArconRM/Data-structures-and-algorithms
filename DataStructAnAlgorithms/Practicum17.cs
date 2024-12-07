@@ -1,15 +1,37 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data.Common;
 using System.IO;
 using System.Linq;
 using System.Text;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace DataStructAnAlgorithms
 {
     public static class Practicum17
     {
+        private static readonly string pathInput = "/Users/artemiymirotvortsev/Projects/Структуры данных и алгоритмы/DataStructAnAlgorithms/Assets/Practicum17/Input.txt";
+
         public static void Task7()
         {
-            //CustomDoubleArray customDoubleArray = new();
+
+            double[][] lines = File
+                .ReadAllLines(pathInput)
+                .Select(line => line.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(s => double.Parse(s)).ToArray())
+                .ToArray();
+            int dimension = lines.Length;
+
+            List<double> numbers = new();
+            for (int i = 0; i < dimension; i++)
+            {
+                double[] line = lines[i];
+                for (int j = 0; j < line.Length; j++)
+                {
+                    numbers.Add(line[j]);
+                }
+            }
+
+            //CustomDoubleArray customDoubleArray = new(numbers.ToArray());
             //Console.WriteLine(customDoubleArray.ToString());
             //Console.WriteLine(customDoubleArray.GetElementsCount());
             //Console.WriteLine();
@@ -22,6 +44,10 @@ namespace DataStructAnAlgorithms
             //customDoubleArray--;
             //Console.WriteLine(customDoubleArray.ToString());
 
+            //CustomDoubleArray customDoubleArrayNew = customDoubleArray++;
+            //customDoubleArrayNew.Scalar = 5;
+            //Console.WriteLine(customDoubleArray.ToString());
+            //Console.WriteLine(customDoubleArrayNew.ToString());
 
             //CustomDoubleArray customDoubleArraySortedDescending = new();
             //customDoubleArraySortedDescending.SortElementsDescending();
@@ -51,10 +77,7 @@ namespace DataStructAnAlgorithms
 
     public class CustomDoubleArray
     {
-        private static readonly string pathInput = "/Users/artemiymirotvortsev/Projects/Структуры данных и алгоритмы/DataStructAnAlgorithms/Assets/Practicum17/Input.txt";
-        private static readonly int DefaultDimension = 5;
-        private static readonly double[] DefaultRow = new double[5] { 1, 2, 3, 4, 5 };
-        private static Random rng = new Random();
+        private static readonly int DefaultDimension = 4;
 
         private double[][] _doubleArray;
 
@@ -86,31 +109,48 @@ namespace DataStructAnAlgorithms
             {
                 return _doubleArray[i][j];
             }
-        }
-
-        public CustomDoubleArray() : this(DefaultDimension) { }
-
-        public CustomDoubleArray(int dimension)
-        {
-            _doubleArray = new double[dimension][];
-
-            double[][] lines = File
-                .ReadAllLines(pathInput)
-                .Select(line => line.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(s => double.Parse(s)).ToArray())
-                .ToArray();
-
-            for (int i = 0; i < dimension; i++)
+            set
             {
-                _doubleArray[i] = lines[i % lines.Length];
+                _doubleArray[i][j] = value;
             }
         }
 
-        public CustomDoubleArray(double[][] obj)
+        public CustomDoubleArray(params double[] numbers) : this(DefaultDimension, numbers) { }
+
+        public CustomDoubleArray(int dimension, params double[] numbers)
         {
-            _doubleArray = obj;
+            _doubleArray = new double[dimension][];
+            int numberOfColumns = numbers.Length / dimension;
+            for (int row = 0; row < dimension; row++)
+            {
+                _doubleArray[row] = new double[numberOfColumns];
+                for (int j = 0; j < numberOfColumns; j++)
+                {
+                    _doubleArray[row][j] = numbers[j + numberOfColumns * row];
+                }
+            }
         }
 
         public CustomDoubleArray(CustomDoubleArray obj) : this(obj._doubleArray) { }
+
+        public CustomDoubleArray(double[][] obj)
+        {
+            _doubleArray = CopyDoubleArray(obj);
+        }
+
+        private double[][] CopyDoubleArray(double[][] obj)
+        {
+            double[][] resultArray = new double[obj.Length][];
+            for (int i = 0; i < obj.Length; i++)
+            {
+                resultArray[i] = new double[obj[i].Length];
+                for (int j = 0; j < obj[i].Length; j++)
+                {
+                    resultArray[i][j] = obj[i][j];
+                }
+            }
+            return resultArray;
+        }
 
         public int GetElementsCount()
         {
@@ -140,19 +180,21 @@ namespace DataStructAnAlgorithms
 
         public static implicit operator double[][](CustomDoubleArray obj)
         {
-            return obj._doubleArray;
+            return obj.CopyDoubleArray(obj._doubleArray);
         }
 
         public static CustomDoubleArray operator ++(CustomDoubleArray obj)
         {
-            obj.Scalar = 1;
-            return obj;
+            CustomDoubleArray copy = new(obj);
+            copy.Scalar = 1;
+            return copy;
         }
 
         public static CustomDoubleArray operator --(CustomDoubleArray obj)
         {
-            obj.Scalar = -1;
-            return obj;
+            CustomDoubleArray copy = new(obj);
+            copy.Scalar = -1;
+            return copy;
         }
 
         public static bool operator true(CustomDoubleArray obj)
@@ -212,7 +254,26 @@ namespace DataStructAnAlgorithms
             if (!obj.GetType().Equals(GetType())) return false;
 
             CustomDoubleArray unboxedObj = (CustomDoubleArray)obj;
-            return unboxedObj._doubleArray.Equals(_doubleArray);
+            return CompareDoubleArrays(unboxedObj._doubleArray, _doubleArray);
+        }
+
+        private bool CompareDoubleArrays(double[][] obj1, double[][] obj2)
+        {
+            for (int i = 0; i < obj1.Length; i++)
+            {
+                if (obj1[i] == null || obj2[i] == null)
+                    return false;
+
+                if (obj1[i].Length != obj2[i].Length)
+                    return false;
+
+                for (int j = 0; j < obj1[i].Length; j++)
+                {
+                    if (obj1[i][j] != obj2[i][j])
+                        return false;
+                }
+            }
+            return true;
         }
     }
 }
