@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
@@ -46,6 +47,14 @@ namespace DataStructAnAlgorithms
             {
                 product.PrintInfo();
             }
+
+            Console.WriteLine();
+
+            products.Sort();
+            foreach (var product in products)
+            {
+                product.PrintInfo();
+            }
         }
 
         private static List<Product> FindProductByType(List<Product> products, Type type)
@@ -69,12 +78,36 @@ namespace DataStructAnAlgorithms
         {
             return $"{MinAge}-{MaxAge}";
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+            if (!obj.GetType().Equals(GetType())) return false;
+
+            AgeLimit unboxedObj = (AgeLimit)obj;
+            return unboxedObj.MaxAge.Equals(MaxAge) && unboxedObj.MinAge.Equals(MinAge);
+        }
+
+        public override int GetHashCode()
+        {
+            return MaxAge.GetHashCode() + MinAge.GetHashCode();
+        }
     }
 
-    internal abstract class Product
+    internal abstract class Product: IComparable<Product>
     {
+        abstract public int GetMinAgeLimit();
         abstract public void PrintInfo();
         abstract public bool MathesType(Type typeToCompare);
+
+        public abstract override bool Equals(object obj);
+        public abstract override int GetHashCode();
+        public abstract override string ToString();
+
+        public int CompareTo(Product other)
+        {
+            return GetMinAgeLimit().CompareTo(other.GetMinAgeLimit());
+        }
     }
 
     file class Toy : Product
@@ -108,14 +141,42 @@ namespace DataStructAnAlgorithms
             AgeLimit = new AgeLimit(int.Parse(props[4].Split("-")[1]), int.Parse(props[4].Split("-")[0]));
         }
 
+        public override int GetMinAgeLimit()
+        {
+            return AgeLimit.MinAge;
+        }
+
         public override void PrintInfo()
         {
-            Console.WriteLine($"Игрушка {Name}; Цена {Price}; Производитель: {Manufacturer}; Материал: {Material}; Целевой возраст: {AgeLimit}");
+            Console.WriteLine(ToString());
         }
 
         public override bool MathesType(Type typeToCompare)
         {
             return GetType() == typeToCompare;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+            if (!obj.GetType().Equals(GetType())) return false;
+
+            Toy unboxedObj = (Toy)obj;
+            return unboxedObj.Name.Equals(Name) &&
+            unboxedObj.Price.Equals(Price) &&
+            unboxedObj.Manufacturer.Equals(Manufacturer) &&
+            unboxedObj.Material.Equals(Material) &&
+            unboxedObj.AgeLimit.Equals(AgeLimit);
+        }
+
+        public override int GetHashCode()
+        {
+            return Name.GetHashCode() + Manufacturer.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return $"Игрушка {Name}; Цена {Price}; Производитель: {Manufacturer}; Материал: {Material}; Целевой возраст: {AgeLimit}";
         }
     }
 
@@ -150,14 +211,41 @@ namespace DataStructAnAlgorithms
             AgeLimit = new AgeLimit(int.Parse(props[4].Split("-")[1]), int.Parse(props[4].Split("-")[0]));
         }
 
+        public override int GetMinAgeLimit()
+        {
+            return AgeLimit.MinAge;
+        }
+
         public override void PrintInfo()
         {
-            Console.WriteLine($"Книга {Name}; От издательства {Publisher}; Цена: {Price}; Целевой возраст: {AgeLimit}");
+            Console.WriteLine(ToString());
         }
 
         public override bool MathesType(Type typeToCompare)
         {
             return GetType() == typeToCompare;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+            if (!obj.GetType().Equals(GetType())) return false;
+
+            Book unboxedObj = (Book)obj;
+            return unboxedObj.Name.Equals(Name) &&
+            unboxedObj.Price.Equals(Price) &&
+            unboxedObj.Publisher.Equals(Publisher) &&
+            unboxedObj.AgeLimit.Equals(AgeLimit);
+        }
+
+        public override int GetHashCode()
+        {
+            return Name.GetHashCode() + Publisher.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return $"Книга {Name}; От издательства {Publisher}; Цена: {Price}; Целевой возраст: {AgeLimit}";
         }
     }
 
@@ -188,14 +276,41 @@ namespace DataStructAnAlgorithms
             AgeLimit = new AgeLimit(int.Parse(props[3].Split("-")[1]), int.Parse(props[3].Split("-")[0]));
         }
 
+        public override int GetMinAgeLimit()
+        {
+            return AgeLimit.MinAge;
+        }
+
         public override void PrintInfo()
         {
-            Console.WriteLine($"Спорт-инвентарь {Name}; Цена {Price}; Производитель: {Manufacturer}; Целевой возраст: {AgeLimit}");
+            Console.WriteLine(ToString());
         }
 
         public override bool MathesType(Type typeToCompare)
         {
             return GetType() == typeToCompare;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+            if (!obj.GetType().Equals(GetType())) return false;
+
+            SportsEquipment unboxedObj = (SportsEquipment)obj;
+            return unboxedObj.Name.Equals(Name) &&
+            unboxedObj.Price.Equals(Price) &&
+            unboxedObj.Manufacturer.Equals(Manufacturer) &&
+            unboxedObj.AgeLimit.Equals(AgeLimit);
+        }
+
+        public override int GetHashCode()
+        {
+            return Name.GetHashCode() + Manufacturer.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return $"Спорт-инвентарь {Name}; Цена {Price}; Производитель: {Manufacturer}; Целевой возраст: {AgeLimit}";
         }
     }
 }
