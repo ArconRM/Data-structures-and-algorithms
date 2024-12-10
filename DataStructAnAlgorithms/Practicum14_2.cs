@@ -39,7 +39,7 @@ namespace DataStructAnAlgorithms
         }
     }
 
-    internal struct Toy : IComparable<Toy>
+    file struct Toy : IComparable<Toy>
     {
         public string name;
         public decimal price;
