@@ -1,6 +1,7 @@
 ﻿using System;
 namespace DataStructAnAlgorithms.Practicum1819
 {
+    [Serializable]
     internal abstract class Product : IComparable<Product>
     {
         protected string Name;

@@ -1,6 +1,7 @@
 ﻿using System;
 namespace DataStructAnAlgorithms.Practicum1819
 {
+    [Serializable]
     internal struct AgeLimit
     {
         public int MaxAge;

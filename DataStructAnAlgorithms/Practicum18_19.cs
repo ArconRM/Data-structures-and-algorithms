@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using DataStructAnAlgorithms.Practicum1819;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace DataStructAnAlgorithms
 {
     public static class Practicum18_19
     {
-        private static readonly string pathInput1 = "/Users/artemiymirotvortsev/Projects/Структуры данных и алгоритмы/DataStructAnAlgorithms/Assets/Practicum18_19/Input1.txt";
-        private static readonly string pathInput2 = "/Users/artemiymirotvortsev/Projects/Структуры данных и алгоритмы/DataStructAnAlgorithms/Assets/Practicum18_19/Input2.txt";
+        private static readonly string pathData = "/Users/artemiymirotvortsev/Projects/Структуры данных и алгоритмы/DataStructAnAlgorithms/Assets/Practicum18_19/data.bat";
 
-        public static void Task7()
+        private static readonly string pathInput1 = "/Users/artemiymirotvortsev/Projects/Структуры данных и алгоритмы/DataStructAnAlgorithms/Assets/Practicum18_19/input1.txt";
+        private static readonly string pathInput2 = "/Users/artemiymirotvortsev/Projects/Структуры данных и алгоритмы/DataStructAnAlgorithms/Assets/Practicum18_19/input2.txt";
+
+        public static void InitData()
         {
-            string[] lines = File.ReadAllLines(pathInput1);
-            List<Product> products = new();
+            List<Product> productsFromTxt = new();
+            string[] lines = File.ReadAllLines(pathInput2);
             foreach (string line in lines)
             {
                 string type = line.Split(";")[0];
@@ -22,15 +25,31 @@ namespace DataStructAnAlgorithms
                 switch (type)
                 {
                     case "Игрушка":
-                        products.Add(new Toy(props));
+                        productsFromTxt.Add(new Toy(props));
                         break;
                     case "Книга":
-                        products.Add(new Book(props));
+                        productsFromTxt.Add(new Book(props));
                         break;
                     case "Спорт-инвентарь":
-                        products.Add(new SportsEquipment(props));
+                        productsFromTxt.Add(new SportsEquipment(props));
                         break;
                 }
+            }
+
+            BinaryFormatter formatter = new();
+            using (FileStream f = new(pathData, FileMode.Create))
+            {
+                formatter.Serialize(f, productsFromTxt);
+            }
+        }
+
+        public static void Task7()
+        {
+            BinaryFormatter formatter = new();
+            List<Product> products = new();
+            using (FileStream f = new(pathData, FileMode.Open))
+            {
+                products = (List<Product>)formatter.Deserialize(f);
             }
 
             foreach (var product in products)

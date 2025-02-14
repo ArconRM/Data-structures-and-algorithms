@@ -1,6 +1,7 @@
 ﻿using System;
 namespace DataStructAnAlgorithms.Practicum1819
 {
+    [Serializable]
     internal class Book : Product
     {
         protected string Author;

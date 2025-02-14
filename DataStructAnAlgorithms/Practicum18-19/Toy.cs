@@ -1,6 +1,7 @@
 ﻿using System;
 namespace DataStructAnAlgorithms.Practicum1819
 {
+    [Serializable]
     internal class Toy : Product
     {
         protected string Manufacturer;
