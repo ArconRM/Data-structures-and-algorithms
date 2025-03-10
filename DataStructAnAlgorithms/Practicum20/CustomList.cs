@@ -1,34 +1,27 @@
 ﻿using System;
-using System.Xml.Linq;
+using System.Collections.Generic;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace DataStructAnAlgorithms.Practicum20
 {
-    public class Node
-    {
-        private int inf;
-        private Node next;
-
-        public Node(int nodeInfo)
-        {
-            inf = nodeInfo;
-            next = null;
-        }
-
-        public Node Next
-        {
-            get => next;
-            set { next = value; }
-        }
-
-        public int Inf
-        {
-            get => inf;
-            set { inf = value; }
-        }
-    }
 
     public class CustomList
     {
+        private class Node
+        {
+            public int Inf { get; set; }
+
+            [JsonIgnore]
+            public Node Next { get; set; }
+
+            public Node(int nodeInfo)
+            {
+                Inf = nodeInfo;
+                Next = null;
+            }
+        }
+
         private Node head;
         private Node tail;
 
@@ -80,6 +73,18 @@ namespace DataStructAnAlgorithms.Practicum20
             Console.WriteLine();
         }
 
+        public override string ToString()
+        {
+            string result = "";
+            Node r = head;
+            while (r is not null)
+            {
+                result += $"{r.Inf} ";
+                r = r.Next;
+            }
+            return result;
+        }
+
         public void ReplaceRepeatingOccurences(int x)
         {
             Node firstRepeating = head;
@@ -104,7 +109,7 @@ namespace DataStructAnAlgorithms.Practicum20
                     firstRepeating = r;
                 }
 
-                //Show();
+                Show();
 
                 r = r.Next;
             }
@@ -116,35 +121,27 @@ namespace DataStructAnAlgorithms.Practicum20
             }
         }
 
-        public void Delete(object key)
+        public string Serialize()
         {
-            if (head == null)
+            List<int> values = new List<int>();
+            Node r = head;
+            while (r != null)
             {
-                throw new Exception("Список пуст");
+                values.Add(r.Inf);
+                r = r.Next;
             }
-            else
+            return JsonSerializer.Serialize(values);
+        }
+
+        public static CustomList Deserialize(string json)
+        {
+            List<int> values = JsonSerializer.Deserialize<List<int>>(json);
+            CustomList list = new CustomList();
+            foreach (int val in values)
             {
-                if (head.Inf.CompareTo(key) == 0)
-                {
-                    head = head.Next;
-                }
-                else
-                {
-                    Node r = head;
-                    while (r.Next != null)
-                    {
-                        if (r.Next.Inf.CompareTo(key) == 0)
-                        {
-                            r.Next = r.Next.Next;
-                            break;
-                        }
-                        else
-                        {
-                            r = r.Next;
-                        }
-                    }
-                }
+                list.AddToEnd(val);
             }
+            return list;
         }
     }
 }

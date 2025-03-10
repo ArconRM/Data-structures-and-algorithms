@@ -15,6 +15,7 @@
     <None Remove="Assets\Practicum18_19\" />
     <None Remove="Practicum18-19\" />
     <None Remove="Practicum20\" />
+    <None Remove="Practicum21\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\" />
@@ -26,5 +27,6 @@
     <Folder Include="Assets\Practicum18_19\" />
     <Folder Include="Practicum18-19\" />
     <Folder Include="Practicum20\" />
+    <Folder Include="Practicum21\" />
   </ItemGroup>
 </Project>
