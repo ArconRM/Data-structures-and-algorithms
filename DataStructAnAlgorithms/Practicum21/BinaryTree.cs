@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace DataStructAnAlgorithms.Practicum21
 {
-    public class BinaryTree //класс, реализующий АТД «дерево бинарного поиска»
+    public class BinaryTree
     {
-        //вложенный класс, отвечающий за узлы и операции допустимы для дерева бинарного поиска
         private class Node
         {
             public object inf; //информационное поле
@@ -39,9 +38,9 @@ namespace DataStructAnAlgorithms.Practicum21
                 }
             }
 
+            //прямой обход дерева
             public static void Preorder(Node r)
             {
-                //прямой обход дерева
                 if (r != null)
                 {
                     Console.Write("{0} ", r.inf);
@@ -52,7 +51,6 @@ namespace DataStructAnAlgorithms.Practicum21
 
             public static void PreorderWithDepthCount(Node r, int currentDepth)
             {
-                //прямой обход дерева
                 if (r != null)
                 {
                     Console.Write($"{r.inf} {currentDepth}\n");
@@ -67,7 +65,7 @@ namespace DataStructAnAlgorithms.Practicum21
                 int count = 0;
                 if (r != null)
                 {
-                    if (r.left is null && r.right is null && (int)r.inf % 2 == 0)
+                    if (r.left is null && r.right is null && (long)r.inf % 2 == 0)
                         count += 1;
                     else
                     {
@@ -78,9 +76,9 @@ namespace DataStructAnAlgorithms.Practicum21
                 return count;
             }
 
+            //симметричный обход дерева
             public static void Inorder(Node r)
             {
-                //симметричный обход дерева
                 if (r != null)
                 {
                     Inorder(r.left);
@@ -89,9 +87,9 @@ namespace DataStructAnAlgorithms.Practicum21
                 }
             }
 
+            //обратный обход дерева
             public static void Postorder(Node r)
             {
-                //обратный обход дерева
                 if (r != null)
                 {
                     Postorder(r.left);
@@ -117,12 +115,12 @@ namespace DataStructAnAlgorithms.Practicum21
                     {
                         if (((IComparable)(r.inf)).CompareTo(key) > 0)
                         {
+                            Search(r.left, key, out item);
                         }
                         else
                         {
+                            Search(r.right, key, out item);
                         }
-                        Search(r.left, key, out item);
-                        Search(r.right, key, out item);
                     }
                 }
             }
@@ -196,7 +194,6 @@ namespace DataStructAnAlgorithms.Practicum21
             Node.Add(ref tree, nodeInf);
         }
 
-        //организация различных способов обхода дерева
         public void Preorder()
         {
             Node.Preorder(tree);
@@ -230,6 +227,16 @@ namespace DataStructAnAlgorithms.Practicum21
         public int CountNodesWithEvenValues() => Node.CountLeavesWithEvenValues(tree);
 
         public void PreorderWithDepthCount() => Node.PreorderWithDepthCount(tree, 0);
+
+        public string Serialize()
+        {
+            return JsonConvert.SerializeObject(tree, Formatting.Indented);
+        }
+
+        public void Deserialize(string json)
+        {
+            tree = JsonConvert.DeserializeObject<Node>(json);
+        }
     }
 }
 
