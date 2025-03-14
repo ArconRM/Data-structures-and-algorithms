@@ -18,7 +18,7 @@ namespace DataStructAnAlgorithms.Practicum21
                 right = null;
             }
 
-            //добавляет узел в дерево так, чтобы дерево оставалось деревом бинарного поиска
+            // добавляет узел в дерево так, чтобы дерево оставалось деревом бинарного поиска
             public static void Add(ref Node r, object nodeInf)
             {
                 if (r == null)
@@ -38,7 +38,7 @@ namespace DataStructAnAlgorithms.Practicum21
                 }
             }
 
-            //прямой обход дерева
+            // прямой обход дерева
             public static void Preorder(Node r)
             {
                 if (r != null)
@@ -49,7 +49,7 @@ namespace DataStructAnAlgorithms.Practicum21
                 }
             }
 
-            public static void PreorderWithDepthCount(Node r, int currentDepth)
+            public static void PreorderWithDepthCount(Node r, int currentDepth = 0)
             {
                 if (r != null)
                 {
@@ -76,7 +76,7 @@ namespace DataStructAnAlgorithms.Practicum21
                 return count;
             }
 
-            //симметричный обход дерева
+            // симметричный обход дерева
             public static void Inorder(Node r)
             {
                 if (r != null)
@@ -87,7 +87,7 @@ namespace DataStructAnAlgorithms.Practicum21
                 }
             }
 
-            //обратный обход дерева
+            // обратный обход дерева
             public static void Postorder(Node r)
             {
                 if (r != null)
@@ -98,7 +98,7 @@ namespace DataStructAnAlgorithms.Practicum21
                 }
             }
 
-            //поиск ключевого узла в дереве
+            // поиск ключевого узла в дереве
             public static void Search(Node r, object key, out Node item)
             {
                 if (r == null)
@@ -125,8 +125,8 @@ namespace DataStructAnAlgorithms.Practicum21
                 }
             }
 
-            //методы Del и Delete позволяют удалить узел в дереве так, чтобы дерево при этом
-            //оставалось деревом бинарного поиска
+            // методы Del и Delete позволяют удалить узел в дереве так, чтобы дерево при этом
+            // оставалось деревом бинарного поиска
             private static void Del(Node t, ref Node tr)
             {
                 if (tr.right != null)
@@ -171,25 +171,25 @@ namespace DataStructAnAlgorithms.Practicum21
             }
         }
 
-        Node tree; //ссылка на корень дерева
+        Node tree; // ссылка на корень дерева
 
-        public object Inf //свойство позволяет получить доступ к значению информационного поля корня дерева
+        public object Inf // свойство позволяет получить доступ к значению информационного поля корня дерева
         {
             set { tree.inf = value; }
             get { return tree.inf; }
         }
 
-        public BinaryTree() //открытый конструктор
+        public BinaryTree() // открытый конструктор
         {
             tree = null;
         }
 
-        private BinaryTree(Node r) //закрытый конструктор
+        private BinaryTree(Node r) // закрытый конструктор
         {
             tree = r;
         }
 
-        public void Add(object nodeInf) //добавление узла в дерево
+        public void Add(object nodeInf) // добавление узла в дерево
         {
             Node.Add(ref tree, nodeInf);
         }
@@ -209,7 +209,7 @@ namespace DataStructAnAlgorithms.Practicum21
             Node.Postorder(tree);
         }
 
-        //поиск ключевого узла в дереве
+        // поиск ключевого узла в дереве
         public BinaryTree Search(object key)
         {
             Node r;
@@ -218,7 +218,7 @@ namespace DataStructAnAlgorithms.Practicum21
             return t;
         }
 
-        //удаление ключевого узла в дереве
+        // удаление ключевого узла в дереве
         public void Delete(object key)
         {
             Node.Delete(ref tree, key);
@@ -226,7 +226,7 @@ namespace DataStructAnAlgorithms.Practicum21
 
         public int CountNodesWithEvenValues() => Node.CountLeavesWithEvenValues(tree);
 
-        public void PreorderWithDepthCount() => Node.PreorderWithDepthCount(tree, 0);
+        public void PreorderWithDepthCount() => Node.PreorderWithDepthCount(tree);
 
         public string Serialize()
         {
@@ -239,4 +239,3 @@ namespace DataStructAnAlgorithms.Practicum21
         }
     }
 }
-

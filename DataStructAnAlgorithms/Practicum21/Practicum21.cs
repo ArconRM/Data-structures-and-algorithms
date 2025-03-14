@@ -51,5 +51,6 @@ namespace DataStructAnAlgorithms.Practicum21
             tree.PreorderWithDepthCount();
         }
     }
+    // TODO: 3 примера
 }
 

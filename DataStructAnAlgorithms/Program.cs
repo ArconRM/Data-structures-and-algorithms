@@ -11,12 +11,12 @@ namespace DataStructAnAlgorithms
     {
         static void Main(string[] args)
         {
-            //Practicum20.Practicum20.InitData();
-            //Practicum20.Practicum20.Task7();
+            Practicum20.Practicum20.InitData();
+            Practicum20.Practicum20.Task7();
 
-            Practicum21.Practicum21.InitData();
-            Practicum21.Practicum21.Task1_7();
-            Practicum21.Practicum21.Task2_7();
+            //Practicum21.Practicum21.InitData();
+            //Practicum21.Practicum21.Task1_7();
+            //Practicum21.Practicum21.Task2_7();
         }
     }
 }
