@@ -7,9 +7,9 @@ namespace DataStructAnAlgorithms.Practicum21
     {
         private class Node
         {
-            public object inf; //информационное поле
-            public Node left; //ссылка на левое поддерево
-            public Node right; //ссылка на правое поддерево
+            public object inf; // информационное поле
+            public Node left; // ссылка на левое поддерево
+            public Node right; // ссылка на правое поддерево
 
             public Node(object nodeInf)
             {
@@ -49,33 +49,6 @@ namespace DataStructAnAlgorithms.Practicum21
                 }
             }
 
-            public static void PreorderWithDepthCount(Node r, int currentDepth = 0)
-            {
-                if (r != null)
-                {
-                    Console.Write($"{r.inf} {currentDepth}\n");
-                    currentDepth++;
-                    PreorderWithDepthCount(r.left, currentDepth);
-                    PreorderWithDepthCount(r.right, currentDepth);
-                }
-            }
-
-            public static int CountLeavesWithEvenValues(Node r)
-            {
-                int count = 0;
-                if (r != null)
-                {
-                    if (r.left is null && r.right is null && (long)r.inf % 2 == 0)
-                        count += 1;
-                    else
-                    {
-                        count += CountLeavesWithEvenValues(r.left);
-                        count += CountLeavesWithEvenValues(r.right);
-                    }
-                }
-                return count;
-            }
-
             // симметричный обход дерева
             public static void Inorder(Node r)
             {
@@ -96,6 +69,35 @@ namespace DataStructAnAlgorithms.Practicum21
                     Postorder(r.right);
                     Console.Write("{0} ", r.inf);
                 }
+            }
+
+            // Прямой обход дерева с подсчетом глубины для каждого
+            public static void PreorderWithDepthCount(Node r, int currentDepth = 0)
+            {
+                if (r != null)
+                {
+                    Console.Write($"{r.inf} {currentDepth}\n");
+                    currentDepth++;
+                    PreorderWithDepthCount(r.left, currentDepth);
+                    PreorderWithDepthCount(r.right, currentDepth);
+                }
+            }
+
+            // Количество листьев с четными значениями узлов
+            public static int CountLeavesWithEvenValues(Node r)
+            {
+                int count = 0;
+                if (r != null)
+                {
+                    if (r.left is null && r.right is null && (long)r.inf % 2 == 0)
+                        count += 1;
+                    else
+                    {
+                        count += CountLeavesWithEvenValues(r.left);
+                        count += CountLeavesWithEvenValues(r.right);
+                    }
+                }
+                return count;
             }
 
             // поиск ключевого узла в дереве

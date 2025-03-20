@@ -1,40 +1,24 @@
 {
-  "inf": 10,
-  "left": {
-    "inf": 7,
-    "left": {
-      "inf": 6,
-      "left": {
-        "inf": 3,
-        "left": null,
-        "right": null
-      },
-      "right": null
-    },
-    "right": {
-      "inf": 8,
-      "left": null,
-      "right": null
-    }
-  },
+  "inf": 7,
+  "left": null,
   "right": {
     "inf": 25,
     "left": {
       "inf": 18,
-      "left": {
-        "inf": 12,
-        "left": null,
-        "right": null
-      },
+      "left": null,
       "right": {
-        "inf": 22,
+        "inf": 19,
         "left": null,
         "right": null
       }
     },
     "right": {
-      "inf": 31,
-      "left": null,
+      "inf": 30,
+      "left": {
+        "inf": 29,
+        "left": null,
+        "right": null
+      },
       "right": null
     }
   }
