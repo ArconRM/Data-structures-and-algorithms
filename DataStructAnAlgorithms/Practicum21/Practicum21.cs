@@ -23,6 +23,8 @@ namespace DataStructAnAlgorithms.Practicum21
             tree.Add(12);
             tree.Add(22);
             tree.Add(8);
+            tree.Add(9);
+            tree.Add(16);
 
             Console.WriteLine("Само дерево:");
             tree.Preorder();
@@ -95,8 +97,8 @@ namespace DataStructAnAlgorithms.Practicum21
             using (FileStream stream = new(pathOutput, FileMode.Create))
             using (StreamWriter f = new(stream))
             {
-                f.WriteLine("Количество листьев с четным значением узлов:");
-                f.WriteLine(tree.CountNodesWithEvenValues());
+                f.WriteLine("Прямой обход с подсчетом глубины узлов:");
+                tree.PreorderWithDepthCount(pathOutput);
             }
         }
     }

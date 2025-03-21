@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using Newtonsoft.Json;
 
 namespace DataStructAnAlgorithms.Practicum21
@@ -80,6 +81,22 @@ namespace DataStructAnAlgorithms.Practicum21
                     currentDepth++;
                     PreorderWithDepthCount(r.left, currentDepth);
                     PreorderWithDepthCount(r.right, currentDepth);
+                }
+            }
+
+            // Прямой обход дерева с подсчетом глубины для каждого
+            public static void PreorderWithDepthCount(Node r, string pathOutput, int currentDepth = 0)
+            {
+                if (r != null)
+                {
+                    using (FileStream stream = new(pathOutput, FileMode.Create))
+                    using (StreamWriter f = new(stream))
+                    {
+                        f.Write($"{r.inf} {currentDepth}\n");
+                        currentDepth++;
+                        PreorderWithDepthCount(r.left, currentDepth);
+                        PreorderWithDepthCount(r.right, currentDepth);
+                    }
                 }
             }
 
@@ -229,6 +246,8 @@ namespace DataStructAnAlgorithms.Practicum21
         public int CountNodesWithEvenValues() => Node.CountLeavesWithEvenValues(tree);
 
         public void PreorderWithDepthCount() => Node.PreorderWithDepthCount(tree);
+
+        public void PreorderWithDepthCount(string pathOutput) => Node.PreorderWithDepthCount(tree, pathOutput);
 
         public string Serialize()
         {
