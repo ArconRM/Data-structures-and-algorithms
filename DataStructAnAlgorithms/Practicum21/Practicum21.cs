@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using DataStructAnAlgorithms.Practicum20;
 
 namespace DataStructAnAlgorithms.Practicum21
@@ -33,6 +35,36 @@ namespace DataStructAnAlgorithms.Practicum21
             File.WriteAllText(pathInput, tree.Serialize());
         }
 
+        public static void InitBalancedData1()
+        {
+            BalancedBinaryTree tree = new();
+            tree.Add(10);
+            tree.Add(7);
+            tree.Add(25);
+            tree.Add(31);
+            tree.Add(18);
+            tree.Add(6);
+            tree.Add(3);
+            tree.Add(12);
+            tree.Add(22);
+            tree.Add(8);
+            tree.Add(9);
+            tree.Add(16);
+
+            Console.WriteLine("Само дерево:");
+            tree.Preorder();
+            Console.WriteLine("\n");
+
+            using (FileStream stream = new(pathInput, FileMode.Create))
+            using (StreamWriter f = new(stream))
+            {
+                foreach (var item in tree.PreorderToList())
+                {
+                    f.Write($"{item} ");
+                }
+            }
+        }
+
         public static void InitData2()
         {
             BinaryTree tree = new();
@@ -53,6 +85,34 @@ namespace DataStructAnAlgorithms.Practicum21
             File.WriteAllText(pathInput, tree.Serialize());
         }
 
+
+        public static void InitBalancedData2()
+        {
+            BalancedBinaryTree tree = new();
+            tree.Add(8);
+            tree.Add(10);
+            tree.Add(14);
+            tree.Add(13);
+            tree.Add(3);
+            tree.Add(1);
+            tree.Add(6);
+            tree.Add(4);
+            tree.Add(7);
+
+            Console.WriteLine("Само дерево:");
+            tree.Preorder();
+            Console.WriteLine("\n");
+
+            using (FileStream stream = new(pathInput, FileMode.Create))
+            using (StreamWriter f = new(stream))
+            {
+                foreach (var item in tree.PreorderToList())
+                {
+                    f.Write($"{item} ");
+                }
+            }
+        }
+
         public static void InitData3()
         {
             BinaryTree tree = new();
@@ -68,6 +128,31 @@ namespace DataStructAnAlgorithms.Practicum21
             Console.WriteLine("\n");
 
             File.WriteAllText(pathInput, tree.Serialize());
+        }
+
+
+        public static void InitBalancedData3()
+        {
+            BalancedBinaryTree tree = new();
+            tree.Add(7);
+            tree.Add(25);
+            tree.Add(18);
+            tree.Add(30);
+            tree.Add(19);
+            tree.Add(29);
+
+            Console.WriteLine("Само дерево:");
+            tree.Preorder();
+            Console.WriteLine("\n");
+
+            using (FileStream stream = new(pathInput, FileMode.Create))
+            using (StreamWriter f = new(stream))
+            {
+                foreach (var item in tree.PreorderToList())
+                {
+                    f.Write($"{item} ");
+                }
+            }
         }
 
         public static void Task1_7()
@@ -93,15 +178,32 @@ namespace DataStructAnAlgorithms.Practicum21
 
             Console.WriteLine("Прямой обход с подсчетом глубины узлов:");
             tree.PreorderWithDepthCount();
+        }
 
+        public static void Task3_7()
+        {
+            using (StreamReader fileIn = new(pathInput))
             using (FileStream stream = new(pathOutput, FileMode.Create))
-            using (StreamWriter f = new(stream))
+            using (StreamWriter fileOut = new(stream))
             {
-                f.WriteLine("Прямой обход с подсчетом глубины узлов:");
-                tree.PreorderWithDepthCount(pathOutput);
+                BalancedBinaryTree balancedBinaryTree = new();
+
+                List<int> nodeInfs = fileIn
+                    .ReadToEnd()
+                    .Trim()
+                    .Split(new char[] { ' ', '\t', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries)
+                    .Select(int.Parse)
+                    .ToList();
+
+                foreach (var nodeInf in nodeInfs)
+                {
+                    balancedBinaryTree.Add(nodeInf);
+                }
+
+                Console.WriteLine("Проверка можно ли добавить можно ли добавить не более n узлов в дерево так, чтобы дерево осталось деревом бинарного поиска и стало сбалансированным");
+                balancedBinaryTree.CheckIfCanBeRepairedByAddingNodes(2);
             }
         }
     }
-    // TODO: 3 примера
 }
 
