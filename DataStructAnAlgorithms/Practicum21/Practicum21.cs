@@ -58,6 +58,7 @@ namespace DataStructAnAlgorithms.Practicum21
             using (FileStream stream = new(pathInput, FileMode.Create))
             using (StreamWriter f = new(stream))
             {
+                f.WriteLine(5);
                 foreach (var item in tree.PreorderToList())
                 {
                     f.Write($"{item} ");
@@ -106,6 +107,7 @@ namespace DataStructAnAlgorithms.Practicum21
             using (FileStream stream = new(pathInput, FileMode.Create))
             using (StreamWriter f = new(stream))
             {
+                f.WriteLine(5);
                 foreach (var item in tree.PreorderToList())
                 {
                     f.Write($"{item} ");
@@ -148,6 +150,7 @@ namespace DataStructAnAlgorithms.Practicum21
             using (FileStream stream = new(pathInput, FileMode.Create))
             using (StreamWriter f = new(stream))
             {
+                f.WriteLine(2);
                 foreach (var item in tree.PreorderToList())
                 {
                     f.Write($"{item} ");
@@ -188,8 +191,10 @@ namespace DataStructAnAlgorithms.Practicum21
             {
                 BalancedBinaryTree balancedBinaryTree = new();
 
+                int n = int.Parse(fileIn.ReadLine().Trim());
+
                 List<int> nodeInfs = fileIn
-                    .ReadToEnd()
+                    .ReadLine()
                     .Trim()
                     .Split(new char[] { ' ', '\t', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries)
                     .Select(int.Parse)
@@ -201,7 +206,7 @@ namespace DataStructAnAlgorithms.Practicum21
                 }
 
                 Console.WriteLine("Проверка можно ли добавить можно ли добавить не более n узлов в дерево так, чтобы дерево осталось деревом бинарного поиска и стало сбалансированным");
-                balancedBinaryTree.CheckIfCanBeRepairedByAddingNodes(2);
+                balancedBinaryTree.CheckIfCanBeRepairedByAddingNodes(n);
             }
         }
     }

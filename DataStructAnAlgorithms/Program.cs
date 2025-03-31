@@ -11,7 +11,7 @@ namespace DataStructAnAlgorithms
     {
         static void Main(string[] args)
         {
-            Practicum21.Practicum21.InitBalancedData3();
+            Practicum21.Practicum21.InitBalancedData1();
             Practicum21.Practicum21.Task3_7();
         }
     }
