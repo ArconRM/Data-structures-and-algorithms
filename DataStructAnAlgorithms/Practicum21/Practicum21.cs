@@ -8,9 +8,11 @@ namespace DataStructAnAlgorithms.Practicum21
 {
     public static class Practicum21
     {
+        private const string pathInput =
+            "/Users/artemiymirotvortsev/Projects/Структуры данных и алгоритмы/DataStructAnAlgorithms/Practicum21/Input.txt";
 
-        private const string pathInput = "/Users/artemiymirotvortsev/Projects/Структуры данных и алгоритмы/DataStructAnAlgorithms/Practicum21/Input.txt";
-        private const string pathOutput = "/Users/artemiymirotvortsev/Projects/Структуры данных и алгоритмы/DataStructAnAlgorithms/Practicum21/Output.txt";
+        private const string pathOutput =
+            "/Users/artemiymirotvortsev/Projects/Структуры данных и алгоритмы/DataStructAnAlgorithms/Practicum21/Output.txt";
 
         public static void InitData1()
         {
@@ -53,12 +55,37 @@ namespace DataStructAnAlgorithms.Practicum21
 
             Console.WriteLine("Само дерево:");
             tree.Preorder();
-            Console.WriteLine("\n");
+            Console.WriteLine();
 
             using (FileStream stream = new(pathInput, FileMode.Create))
             using (StreamWriter f = new(stream))
             {
                 f.WriteLine(5);
+                foreach (var item in tree.PreorderToList())
+                {
+                    f.Write($"{item} ");
+                }
+            }
+        }
+        
+        
+        public static void InitBalancedData4()
+        {
+            BalancedBinaryTree tree = new();
+            tree.Add(32);
+            tree.Add(36);
+            tree.Add(38);
+            tree.Add(40);
+            tree.Add(45);
+
+            Console.WriteLine("Само дерево:");
+            tree.Preorder();
+            Console.WriteLine();
+
+            using (FileStream stream = new(pathInput, FileMode.Create))
+            using (StreamWriter f = new(stream))
+            {
+                f.WriteLine(2);
                 foreach (var item in tree.PreorderToList())
                 {
                     f.Write($"{item} ");
@@ -94,6 +121,7 @@ namespace DataStructAnAlgorithms.Practicum21
             tree.Add(10);
             tree.Add(14);
             tree.Add(13);
+            tree.Add(12);
             tree.Add(3);
             tree.Add(1);
             tree.Add(6);
@@ -102,12 +130,12 @@ namespace DataStructAnAlgorithms.Practicum21
 
             Console.WriteLine("Само дерево:");
             tree.Preorder();
-            Console.WriteLine("\n");
+            Console.WriteLine();
 
             using (FileStream stream = new(pathInput, FileMode.Create))
             using (StreamWriter f = new(stream))
             {
-                f.WriteLine(5);
+                f.WriteLine(3);
                 foreach (var item in tree.PreorderToList())
                 {
                     f.Write($"{item} ");
@@ -145,7 +173,7 @@ namespace DataStructAnAlgorithms.Practicum21
 
             Console.WriteLine("Само дерево:");
             tree.Preorder();
-            Console.WriteLine("\n");
+            Console.WriteLine();
 
             using (FileStream stream = new(pathInput, FileMode.Create))
             using (StreamWriter f = new(stream))
@@ -205,10 +233,10 @@ namespace DataStructAnAlgorithms.Practicum21
                     balancedBinaryTree.Add(nodeInf);
                 }
 
-                Console.WriteLine("Проверка можно ли добавить можно ли добавить не более n узлов в дерево так, чтобы дерево осталось деревом бинарного поиска и стало сбалансированным");
+                Console.WriteLine(
+                    "Проверка можно ли добавить можно ли добавить не более n узлов в дерево так, чтобы дерево осталось деревом бинарного поиска и стало сбалансированным");
                 balancedBinaryTree.CheckIfCanBeRepairedByAddingNodes(n);
             }
         }
     }
 }
-

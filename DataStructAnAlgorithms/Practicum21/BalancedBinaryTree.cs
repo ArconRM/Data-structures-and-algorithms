@@ -199,6 +199,7 @@ namespace DataStructAnAlgorithms.Practicum21
                                     t.left.NewHeight();
                                 }
                             }
+
                             t.NewHeight();
                         }
                     }
@@ -274,6 +275,7 @@ namespace DataStructAnAlgorithms.Practicum21
             {
                 Console.Write($"{node.inf} ");
             }
+
             Console.WriteLine();
 
             if (shitNodes.Count == 0)
@@ -302,6 +304,7 @@ namespace DataStructAnAlgorithms.Practicum21
                     {
                         node = node.right;
                     }
+
                     Add((int)node.inf + 1);
                     addedNodes.Add((int)node.inf + 1);
                 }
@@ -312,6 +315,7 @@ namespace DataStructAnAlgorithms.Practicum21
                     {
                         node = node.left;
                     }
+
                     Add((int)node.inf - 1);
                     addedNodes.Add((int)node.inf - 1);
                 }
@@ -351,6 +355,7 @@ namespace DataStructAnAlgorithms.Practicum21
                 {
                     result.Add(r);
                 }
+
                 GetShitNodesHelper(r.left, result);
                 GetShitNodesHelper(r.right, result);
             }
