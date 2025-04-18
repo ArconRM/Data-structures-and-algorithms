@@ -1,0 +1,6 @@
+@_3LArchitectureAPI_HostAddress = http://localhost:5114
+
+GET {{_3LArchitectureAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

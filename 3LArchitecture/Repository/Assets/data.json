@@ -1,0 +1,385 @@
+{
+  "$type": "System.Collections.Generic.List`1[[_3LArchitecture.Common.Entities.Product, 3LArchitecture]], System.Private.CoreLib",
+  "$values": [
+    {
+      "$type": "_3LArchitecture.Common.Entities.Toy, 3LArchitecture",
+      "Manufacturer": "FunCorp",
+      "Material": "Metal",
+      "UUID": "5ae26d53-c7b9-4d82-a0d0-ce058cf86b1b",
+      "Name": "Toy Name",
+      "Price": 79.14,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 8,
+        "MinAge": 4
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.Toy, 3LArchitecture",
+      "Manufacturer": "MiniWorld",
+      "Material": "Metal",
+      "UUID": "de36d9bb-fcea-4feb-8dc1-74159c6c60d9",
+      "Name": "Toy Name",
+      "Price": 5.76,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 10,
+        "MinAge": 9
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.Toy, 3LArchitecture",
+      "Manufacturer": "ToyMaker Inc.",
+      "Material": "Metal",
+      "UUID": "2739861f-23d4-443a-b20b-381539a23247",
+      "Name": "Toy Name",
+      "Price": 18.14,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 13,
+        "MinAge": 8
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.Toy, 3LArchitecture",
+      "Manufacturer": "ToyMaker Inc.",
+      "Material": "Metal",
+      "UUID": "db03636c-f32d-4eaa-bbd5-2d6cfc0d1e95",
+      "Name": "Toy Name",
+      "Price": 51.33,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 9,
+        "MinAge": 5
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.Toy, 3LArchitecture",
+      "Manufacturer": "FunCorp",
+      "Material": "Metal",
+      "UUID": "8f088021-1ddd-4faa-b14c-db5f015c6639",
+      "Name": "Toy Name",
+      "Price": 44.37,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 12,
+        "MinAge": 10
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.Toy, 3LArchitecture",
+      "Manufacturer": "ToyMaker Inc.",
+      "Material": "Metal",
+      "UUID": "ef0ddf64-5f32-4568-9f45-466a812b1b88",
+      "Name": "Toy Name",
+      "Price": 71.39,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 8,
+        "MinAge": 5
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.Toy, 3LArchitecture",
+      "Manufacturer": "MiniWorld",
+      "Material": "Metal",
+      "UUID": "5fe3019a-657d-41a6-ac30-36a3d5317eb5",
+      "Name": "Toy Name",
+      "Price": 88.08,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 9,
+        "MinAge": 4
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.Toy, 3LArchitecture",
+      "Manufacturer": "FunCorp",
+      "Material": "Wood",
+      "UUID": "9606782c-5e74-44de-b54c-f5a3ef867c30",
+      "Name": "Toy Name",
+      "Price": 33.15,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 6,
+        "MinAge": 5
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.Toy, 3LArchitecture",
+      "Manufacturer": "FunCorp",
+      "Material": "Metal",
+      "UUID": "59c6976c-a336-4f5f-bb0d-75253507a24c",
+      "Name": "Toy Name",
+      "Price": 26.51,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 13,
+        "MinAge": 8
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.Toy, 3LArchitecture",
+      "Manufacturer": "FunCorp",
+      "Material": "Wood",
+      "UUID": "7663a76d-44b8-4a93-8cb4-4b34cf2a5558",
+      "Name": "Toy Name",
+      "Price": 94.18,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 11,
+        "MinAge": 6
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.SportsEquipment, 3LArchitecture",
+      "Manufacturer": "Sportify",
+      "UUID": "1c9fab21-9ce4-42fb-ae84-ed2af84bc7d4",
+      "Name": "SportsEquipment Name",
+      "Price": 19.29,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 4,
+        "MinAge": 1
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.SportsEquipment, 3LArchitecture",
+      "Manufacturer": "FitGear",
+      "UUID": "ca0be8ac-5aee-44cb-87e0-44f5a20d8a12",
+      "Name": "SportsEquipment Name",
+      "Price": 86.01,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 6,
+        "MinAge": 2
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.SportsEquipment, 3LArchitecture",
+      "Manufacturer": "ActiveLife",
+      "UUID": "2a6f2cd4-7bf1-4dbc-81fe-d13f9bcdcf13",
+      "Name": "SportsEquipment Name",
+      "Price": 51.93,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 2,
+        "MinAge": 1
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.SportsEquipment, 3LArchitecture",
+      "Manufacturer": "FitGear",
+      "UUID": "04615b5c-f7db-4cb5-8d15-857967e5f319",
+      "Name": "SportsEquipment Name",
+      "Price": 19.09,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 11,
+        "MinAge": 7
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.SportsEquipment, 3LArchitecture",
+      "Manufacturer": "ActiveLife",
+      "UUID": "da40fb79-e60f-4f4a-9dab-a513de79d422",
+      "Name": "SportsEquipment Name",
+      "Price": 50.78,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 9,
+        "MinAge": 5
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.SportsEquipment, 3LArchitecture",
+      "Manufacturer": "Sportify",
+      "UUID": "5be4b2ee-483b-4c62-a913-17ce065c1e22",
+      "Name": "SportsEquipment Name",
+      "Price": 99.6,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 6,
+        "MinAge": 5
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.SportsEquipment, 3LArchitecture",
+      "Manufacturer": "FitGear",
+      "UUID": "a9a54b65-47ef-4747-8914-c6adfaac9dda",
+      "Name": "SportsEquipment Name",
+      "Price": 73.17,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 9,
+        "MinAge": 5
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.SportsEquipment, 3LArchitecture",
+      "Manufacturer": "Sportify",
+      "UUID": "36ee68a3-985a-4000-913d-1e67ff71a8be",
+      "Name": "SportsEquipment Name",
+      "Price": 67.3,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 6,
+        "MinAge": 2
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.SportsEquipment, 3LArchitecture",
+      "Manufacturer": "Sportify",
+      "UUID": "439cbc4f-4095-485f-96ec-b9edbe3ca408",
+      "Name": "SportsEquipment Name",
+      "Price": 46.63,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 10,
+        "MinAge": 8
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.SportsEquipment, 3LArchitecture",
+      "Manufacturer": "Sportify",
+      "UUID": "aebee6c2-c02f-47de-a773-b77d9ebea8b0",
+      "Name": "SportsEquipment Name",
+      "Price": 9.21,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 10,
+        "MinAge": 9
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.Book, 3LArchitecture",
+      "Author": "Author B",
+      "Publisher": "EduBooks",
+      "UUID": "b74d628f-a8c4-46cc-83f1-785e2b1880d7",
+      "Name": "Book Name",
+      "Price": 95.44,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 4,
+        "MinAge": 1
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.Book, 3LArchitecture",
+      "Author": "Author B",
+      "Publisher": "PubHouse",
+      "UUID": "0cfb33b4-c64b-450c-bda8-61e98781cb41",
+      "Name": "Book Name",
+      "Price": 39.59,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 6,
+        "MinAge": 5
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.Book, 3LArchitecture",
+      "Author": "Author B",
+      "Publisher": "ReadMore",
+      "UUID": "074ee055-209a-4177-a074-c1de4c646e79",
+      "Name": "Book Name",
+      "Price": 90.73,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 10,
+        "MinAge": 5
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.Book, 3LArchitecture",
+      "Author": "Author C",
+      "Publisher": "ReadMore",
+      "UUID": "b78f4f36-f2b3-4d97-9231-d025cddcd3d3",
+      "Name": "Book Name",
+      "Price": 86.89,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 6,
+        "MinAge": 4
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.Book, 3LArchitecture",
+      "Author": "Author A",
+      "Publisher": "ReadMore",
+      "UUID": "2f8c543d-96f2-49f7-a059-6e2a2c4457be",
+      "Name": "Book Name",
+      "Price": 43.27,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 6,
+        "MinAge": 5
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.Book, 3LArchitecture",
+      "Author": "Author B",
+      "Publisher": "PubHouse",
+      "UUID": "a8c79895-86ee-4b6f-9c76-ba6726480121",
+      "Name": "Book Name",
+      "Price": 57.94,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 9,
+        "MinAge": 6
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.Book, 3LArchitecture",
+      "Author": "Author A",
+      "Publisher": "PubHouse",
+      "UUID": "d6f56b13-e96b-4504-968e-52560a97c349",
+      "Name": "Book Name",
+      "Price": 67.37,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 9,
+        "MinAge": 7
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.Book, 3LArchitecture",
+      "Author": "Author B",
+      "Publisher": "PubHouse",
+      "UUID": "19b06881-6f26-43f4-9235-1f50674f4580",
+      "Name": "Book Name",
+      "Price": 89.94,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 14,
+        "MinAge": 9
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.Book, 3LArchitecture",
+      "Author": "Author A",
+      "Publisher": "ReadMore",
+      "UUID": "39820121-351f-460b-b4ee-8d01963c7e4c",
+      "Name": "Book Name",
+      "Price": 17.56,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 8,
+        "MinAge": 5
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.Book, 3LArchitecture",
+      "Author": "Author A",
+      "Publisher": "PubHouse",
+      "UUID": "8b6eabdf-ddc1-4435-abef-f466da225522",
+      "Name": "Book Name",
+      "Price": 10.44,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 5,
+        "MinAge": 2
+      }
+    }
+  ]
+}
