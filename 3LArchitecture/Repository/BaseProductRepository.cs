@@ -8,23 +8,23 @@ namespace _3LArchitecture.Repository;
 
 public class BaseProductRepository<T> : IProductRepository<T> where T: Product
 {
-    //private const string _toys_path =
-    //    "/Users/artemiymirotvortsev/Projects/Структуры данных и алгоритмы/3LArchitecture/Repository/Assets/toys.json";
-
-    //private const string _sports_equipments_path =
-    //    "/Users/artemiymirotvortsev/Projects/Структуры данных и алгоритмы/3LArchitecture/Repository/Assets/sports_equipments.json";
-
-    //private const string _books_path =
-    //    "/Users/artemiymirotvortsev/Projects/Структуры данных и алгоритмы/3LArchitecture/Repository/Assets/books.json";
-
     private const string _toys_path =
-        "C:/Users/Artemiy/Source/Repos/ArconRM/Data-structures-and-algorithms/3LArchitecture/Repository/Assets/toys.json";
+        "/Users/artemiymirotvortsev/Projects/Структуры данных и алгоритмы/3LArchitecture/Repository/Assets/toys.json";
 
     private const string _sports_equipments_path =
-        "C:/Users/Artemiy/Source/Repos/ArconRM/Data-structures-and-algorithms/3LArchitecture/Repository/Assets/sports_equipments.json";
+        "/Users/artemiymirotvortsev/Projects/Структуры данных и алгоритмы/3LArchitecture/Repository/Assets/sports_equipments.json";
 
     private const string _books_path =
-        "C:/Users/Artemiy/Source/Repos/ArconRM/Data-structures-and-algorithms/3LArchitecture/Repository/Assets/books.json";
+        "/Users/artemiymirotvortsev/Projects/Структуры данных и алгоритмы/3LArchitecture/Repository/Assets/books.json";
+
+    //private const string _toys_path =
+    //    "C:/Users/Artemiy/Source/Repos/ArconRM/Data-structures-and-algorithms/3LArchitecture/Repository/Assets/toys.json";
+
+    //private const string _sports_equipments_path =
+    //    "C:/Users/Artemiy/Source/Repos/ArconRM/Data-structures-and-algorithms/3LArchitecture/Repository/Assets/sports_equipments.json";
+
+    //private const string _books_path =
+    //    "C:/Users/Artemiy/Source/Repos/ArconRM/Data-structures-and-algorithms/3LArchitecture/Repository/Assets/books.json";
 
     private string _path;
 
