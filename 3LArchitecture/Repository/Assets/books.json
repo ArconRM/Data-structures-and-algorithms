@@ -1,0 +1,135 @@
+﻿{
+  "$type": "System.Collections.Generic.List`1[[_3LArchitecture.Common.Entities.Book, 3LArchitecture]], System.Private.CoreLib",
+  "$values": [
+    {
+      "$type": "_3LArchitecture.Common.Entities.Book, 3LArchitecture",
+      "Author": "Author B",
+      "Publisher": "EduBooks",
+      "UUID": "b74d628f-a8c4-46cc-83f1-785e2b1880d7",
+      "Name": "Book Name",
+      "Price": 95.44,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 4,
+        "MinAge": 1
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.Book, 3LArchitecture",
+      "Author": "Author B",
+      "Publisher": "PubHouse",
+      "UUID": "0cfb33b4-c64b-450c-bda8-61e98781cb41",
+      "Name": "Book Name",
+      "Price": 39.59,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 6,
+        "MinAge": 5
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.Book, 3LArchitecture",
+      "Author": "Author B",
+      "Publisher": "ReadMore",
+      "UUID": "074ee055-209a-4177-a074-c1de4c646e79",
+      "Name": "Book Name",
+      "Price": 90.73,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 10,
+        "MinAge": 5
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.Book, 3LArchitecture",
+      "Author": "Author C",
+      "Publisher": "ReadMore",
+      "UUID": "b78f4f36-f2b3-4d97-9231-d025cddcd3d3",
+      "Name": "Book Name",
+      "Price": 86.89,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 6,
+        "MinAge": 4
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.Book, 3LArchitecture",
+      "Author": "Author A",
+      "Publisher": "ReadMore",
+      "UUID": "2f8c543d-96f2-49f7-a059-6e2a2c4457be",
+      "Name": "Book Name",
+      "Price": 43.27,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 6,
+        "MinAge": 5
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.Book, 3LArchitecture",
+      "Author": "Author B",
+      "Publisher": "PubHouse",
+      "UUID": "a8c79895-86ee-4b6f-9c76-ba6726480121",
+      "Name": "Book Name",
+      "Price": 57.94,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 9,
+        "MinAge": 6
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.Book, 3LArchitecture",
+      "Author": "Author A",
+      "Publisher": "PubHouse",
+      "UUID": "d6f56b13-e96b-4504-968e-52560a97c349",
+      "Name": "Book Name",
+      "Price": 67.37,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 9,
+        "MinAge": 7
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.Book, 3LArchitecture",
+      "Author": "Author B",
+      "Publisher": "PubHouse",
+      "UUID": "19b06881-6f26-43f4-9235-1f50674f4580",
+      "Name": "Book Name",
+      "Price": 89.94,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 14,
+        "MinAge": 9
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.Book, 3LArchitecture",
+      "Author": "Author A",
+      "Publisher": "ReadMore",
+      "UUID": "39820121-351f-460b-b4ee-8d01963c7e4c",
+      "Name": "Book Name",
+      "Price": 17.56,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 8,
+        "MinAge": 5
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.Book, 3LArchitecture",
+      "Author": "Author A",
+      "Publisher": "PubHouse",
+      "UUID": "8b6eabdf-ddc1-4435-abef-f466da225522",
+      "Name": "Book Name",
+      "Price": 10.44,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 5,
+        "MinAge": 2
+      }
+    }
+  ]
+}

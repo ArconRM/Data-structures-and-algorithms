@@ -3,17 +3,13 @@ using _3LArchitecture.Common.Entities.Enums;
 
 namespace _3LArchitecture.Repository.Interfaces;
 
-public interface IProductRepository
+public interface IProductRepository<T> where T: Product
 {
-    public List<Product> GetAllProducts();
+    public List<T> GetAllProducts();
     
-    public List<Product> GetProductsByName(string name);
+    public List<T> GetProductsByName(string name);
 
-    public List<Product> FindProductsByType(ProductType productType);
-
-    public Product AddProduct(Product product);
+    public T AddProduct(T product);
 
     public void DeleteProduct(Guid uuid);
-
-    public List<Product> RestoreFromBackup();
 }

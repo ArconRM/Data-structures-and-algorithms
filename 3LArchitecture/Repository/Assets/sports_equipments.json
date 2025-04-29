@@ -1,0 +1,125 @@
+﻿{
+  "$type": "System.Collections.Generic.List`1[[_3LArchitecture.Common.Entities.SportsEquipment, 3LArchitecture]], System.Private.CoreLib",
+  "$values": [
+    {
+      "$type": "_3LArchitecture.Common.Entities.SportsEquipment, 3LArchitecture",
+      "Manufacturer": "Sportify",
+      "UUID": "1c9fab21-9ce4-42fb-ae84-ed2af84bc7d4",
+      "Name": "SportsEquipment Name",
+      "Price": 19.29,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 4,
+        "MinAge": 1
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.SportsEquipment, 3LArchitecture",
+      "Manufacturer": "FitGear",
+      "UUID": "ca0be8ac-5aee-44cb-87e0-44f5a20d8a12",
+      "Name": "SportsEquipment Name",
+      "Price": 86.01,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 6,
+        "MinAge": 2
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.SportsEquipment, 3LArchitecture",
+      "Manufacturer": "ActiveLife",
+      "UUID": "2a6f2cd4-7bf1-4dbc-81fe-d13f9bcdcf13",
+      "Name": "SportsEquipment Name",
+      "Price": 51.93,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 2,
+        "MinAge": 1
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.SportsEquipment, 3LArchitecture",
+      "Manufacturer": "FitGear",
+      "UUID": "04615b5c-f7db-4cb5-8d15-857967e5f319",
+      "Name": "SportsEquipment Name",
+      "Price": 19.09,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 11,
+        "MinAge": 7
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.SportsEquipment, 3LArchitecture",
+      "Manufacturer": "ActiveLife",
+      "UUID": "da40fb79-e60f-4f4a-9dab-a513de79d422",
+      "Name": "SportsEquipment Name",
+      "Price": 50.78,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 9,
+        "MinAge": 5
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.SportsEquipment, 3LArchitecture",
+      "Manufacturer": "Sportify",
+      "UUID": "5be4b2ee-483b-4c62-a913-17ce065c1e22",
+      "Name": "SportsEquipment Name",
+      "Price": 99.6,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 6,
+        "MinAge": 5
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.SportsEquipment, 3LArchitecture",
+      "Manufacturer": "FitGear",
+      "UUID": "a9a54b65-47ef-4747-8914-c6adfaac9dda",
+      "Name": "SportsEquipment Name",
+      "Price": 73.17,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 9,
+        "MinAge": 5
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.SportsEquipment, 3LArchitecture",
+      "Manufacturer": "Sportify",
+      "UUID": "36ee68a3-985a-4000-913d-1e67ff71a8be",
+      "Name": "SportsEquipment Name",
+      "Price": 67.3,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 6,
+        "MinAge": 2
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.SportsEquipment, 3LArchitecture",
+      "Manufacturer": "Sportify",
+      "UUID": "439cbc4f-4095-485f-96ec-b9edbe3ca408",
+      "Name": "SportsEquipment Name",
+      "Price": 46.63,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 10,
+        "MinAge": 8
+      }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.SportsEquipment, 3LArchitecture",
+      "Manufacturer": "Sportify",
+      "UUID": "aebee6c2-c02f-47de-a773-b77d9ebea8b0",
+      "Name": "SportsEquipment Name",
+      "Price": 9.21,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 10,
+        "MinAge": 9
+      }
+    }
+  ]
+}
