@@ -43,6 +43,21 @@ namespace _3LArchitectureInterface
                     book.AgeLimit.ToString());
             }
         }
+        
+        private void FillDataGridViewBooksSorted()
+        {
+            dataGridViewBooks.Rows.Clear();
+            foreach (Book book in _bookService.GetAllProducts().Sort())
+            {
+                dataGridViewBooks.Rows.Add(
+                    book.UUID.ToString(),
+                    book.Name,
+                    book.Author,
+                    book.Price,
+                    book.Publisher,
+                    book.AgeLimit.ToString());
+            }
+        }
 
         private void FillDataGridViewSE()
         {
@@ -57,11 +72,40 @@ namespace _3LArchitectureInterface
                     equipment.AgeLimit.ToString());
             }
         }
+        
+        private void FillDataGridViewSESorted()
+        {
+            dataGridViewSE.Rows.Clear();
+            foreach (SportsEquipment equipment in _sportsEquipmentService.GetAllProducts().Sort())
+            {
+                dataGridViewSE.Rows.Add(
+                    equipment.UUID.ToString(),
+                    equipment.Name,
+                    equipment.Price,
+                    equipment.Manufacturer,
+                    equipment.AgeLimit.ToString());
+            }
+        }
 
         private void FillDataGridViewToys()
         {
             dataGridViewToys.Rows.Clear();
             foreach (Toy toy in _toyService.GetAllProducts())
+            {
+                dataGridViewToys.Rows.Add(
+                    toy.UUID.ToString(),
+                    toy.Name,
+                    toy.Price,
+                    toy.Manufacturer,
+                    toy.Material,
+                    toy.AgeLimit.ToString());
+            }
+        }
+        
+        private void FillDataGridViewToysSorted()
+        {
+            dataGridViewToys.Rows.Clear();
+            foreach (Toy toy in _toyService.GetAllProducts().Sort())
             {
                 dataGridViewToys.Rows.Add(
                     toy.UUID.ToString(),
@@ -144,8 +188,8 @@ namespace _3LArchitectureInterface
         private void dataGridViewToys_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
             var result = MessageBox.Show(
-               "Вы уверены что хотите удалить этот элемент?",
-               "Подтверждение удаления",
+               "пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ?",
+               "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ",
                MessageBoxButtons.YesNo,
                MessageBoxIcon.Question);
 
@@ -233,8 +277,8 @@ namespace _3LArchitectureInterface
         private void dataGridViewBooks_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
             var result = MessageBox.Show(
-               "Вы уверены что хотите удалить этот элемент?",
-               "Подтверждение удаления",
+               "пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ?",
+               "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ",
                MessageBoxButtons.YesNo,
                MessageBoxIcon.Question);
 
@@ -316,8 +360,8 @@ namespace _3LArchitectureInterface
         private void dataGridViewSE_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
             var result = MessageBox.Show(
-               "Вы уверены что хотите удалить этот элемент?",
-               "Подтверждение удаления",
+               "пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ?",
+               "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ",
                MessageBoxButtons.YesNo,
                MessageBoxIcon.Question);
 
