@@ -377,3 +377,6 @@ namespace _3LArchitectureInterface
         }
     }
 }
+
+//<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+// <SelfContained>true</SelfContained>
