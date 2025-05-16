@@ -120,6 +120,18 @@
         "MaxAge": 10,
         "MinAge": 9
       }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.SportsEquipment, 3LArchitecture",
+      "Manufacturer": "Производитель 1",
+      "UUID": "eb031d71-614d-4c40-8627-ca96d657b0fb",
+      "Name": "Спорт инвентарь",
+      "Price": 14.12,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 21,
+        "MinAge": 12
+      }
     }
   ]
 }

@@ -11,21 +11,8 @@ namespace DataStructAnAlgorithms
     {
         static void Main(string[] args)
         {
-            // Practicum21.Practicum21.InitBalancedData1();
-            // Practicum21.Practicum21.Task3_7();
-            // Console.WriteLine("\n");
-            //
-            // Practicum21.Practicum21.InitBalancedData2();
-            // Practicum21.Practicum21.Task3_7();
-            // Console.WriteLine("\n");
-            //
-            // Practicum21.Practicum21.InitBalancedData3();
-            // Practicum21.Practicum21.Task3_7();
-            // Console.WriteLine("\n");
-            
-            Practicum21.Practicum21.InitBalancedData4();
-            Practicum21.Practicum21.Task3_7();
-            Console.WriteLine("\n");
+            Practicum22.Practicum22.Task1();
+            Practicum22.Practicum22.Task2();
         }
     }
 }

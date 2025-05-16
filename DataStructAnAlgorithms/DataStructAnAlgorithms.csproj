@@ -25,7 +25,6 @@
 		<Folder Include="Assets\Practicum16\" />
 		<Folder Include="Assets\Practicum17\" />
 		<Folder Include="Assets\Practicum18_19\" />
-		<Folder Include="Practicum18-19\" />
 		<Folder Include="Practicum20\" />
 		<Folder Include="Practicum21\" />
 	</ItemGroup>

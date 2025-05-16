@@ -130,6 +130,19 @@
         "MaxAge": 11,
         "MinAge": 6
       }
+    },
+    {
+      "$type": "_3LArchitecture.Common.Entities.Toy, 3LArchitecture",
+      "Manufacturer": "Производитель 1",
+      "Material": "Материал 1",
+      "UUID": "a7af1722-a491-4dfb-8a73-6c5b16605c4d",
+      "Name": "Игрушка 1",
+      "Price": 14.12,
+      "AgeLimit": {
+        "$type": "_3LArchitecture.Common.Entities.AgeLimit, 3LArchitecture",
+        "MaxAge": 21,
+        "MinAge": 12
+      }
     }
   ]
 }
